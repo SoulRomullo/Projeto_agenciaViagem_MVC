@@ -1,0 +1,56 @@
+﻿@{ 
+    var pessoa = ViewBag.pessoa;
+}
+
+<div class="row body-content" style="background-color:white;">
+
+
+    <h2>@ViewBag.Title</h2>
+    <h3 class="badge bg-primary">@ViewBag.Message</h3>
+
+    <form action="/pessoas/excluir" method="post">
+        <div class="row col-md-offset-3">
+
+            <input type="hidden" id="id" name="id" value="@pessoa.Id" />
+
+            <label for="nome" class="col-sm-2 col-form-label text-right">Nome:</label>
+            <div class="col-sm-4">
+                <input type="text" id="nome" name="nome" readonly value="@pessoa.Nome" />
+            </div>
+        </div>
+
+        <div class="row col-md-offset-3">
+            <label for="cpf" class="col-sm-2 col-form-label text-right">CPF:</label>
+            <div class="col-sm-4">
+                <input type="text" id="cpf" name="cpf" readonly value="@pessoa.Cpf" />
+            </div>
+        </div>
+
+        <div class="row col-md-offset-3">
+            <label for="endereco" class="col-sm-2 col-form-label text-right">Endereço:</label>
+            <div class="col-sm-4">
+                <input type="text" id="endereco" name="endereco" readonly value="@pessoa.Endereco" />
+            </div>
+        </div>
+
+        <div class="row col-md-offset-3">
+            <label for="telefone" class="col-sm-2 col-form-label text-right">Telefone:</label>
+            <div class="col-sm-4">
+                <input type="text" id="telefone" name="telefone" readonly value="@pessoa.Telefone" />
+            </div>
+        </div>
+
+        <div class="row col-md-offset-3">
+            <label for="cupom" class="col-sm-2 col-form-label text-right">Cupom:</label>
+            <div class="col-sm-4">
+                <input type="text" id="cupom" name="cupom" readonly value="@pessoa.Cupom" />
+            </div>
+        </div>
+
+        <hr />
+        <br />
+        <div class="button">
+            <button class="btn btn-danger row" type="submit">Excluir</button>
+        </div>
+    </form>
+</div>

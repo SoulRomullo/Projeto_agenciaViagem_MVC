@@ -1,0 +1,31 @@
+﻿<div class="row body-content" style="background-color:white; width: 100%">
+<h2>@ViewBag.Title</h2>
+<h3 class="badge bg-success">@ViewBag.Message</h3>
+
+<p class="text-left"><a class="btn btn-default" href="/Pessoas/Adicionar">Cadastrar &raquo;</a></p>
+
+<table class="table table-sucess table-striped " style="background-color:white;">
+    <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Cupom</th>
+        <th>Ação</th>
+        <th>Excluir</th>
+    </tr>
+
+    @foreach(var item in ViewBag.Lista)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Cpf</td>
+            <td>@item.Endereco</td>
+            <td>@item.Telefone</td>
+            <td>@item.Cupom</td>
+            <td><a href="/Pessoas/Alterar/@item.Id">Alterar</a></td>
+            <td><a href="/Pessoas/Excluir/@item.Id">Excluir</a></td>
+        </tr>
+    }
+</table>
+</div>
